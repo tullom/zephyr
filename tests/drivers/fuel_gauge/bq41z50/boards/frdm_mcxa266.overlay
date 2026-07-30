@@ -1,0 +1,13 @@
+/*
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+&lpi2c1 {
+	status = "okay";
+
+	bq41z50: bq41z50@b {
+		compatible = "ti,bq41z50";
+		reg = <0x0b>;
+		status = "okay";
+	};
+};

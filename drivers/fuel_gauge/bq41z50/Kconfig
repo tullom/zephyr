@@ -1,0 +1,20 @@
+# Copyright (c) 2026 Open Device Partnership and Contributors
+#
+# SPDX-License-Identifier: Apache-2.0
+
+config BQ41Z50
+	bool "BQ41Z50 Fuel Gauge"
+	default y
+	depends on DT_HAS_TI_BQ41Z50_ENABLED
+	select I2C
+	help
+	  Enable I2C-based driver for BQ41Z50 Fuel Gauge.
+
+config EMUL_BQ41Z50
+	bool "Emulate a BQ41Z50 fuel gauge"
+	default y
+	depends on EMUL
+	depends on BQ41Z50
+	help
+	  It provides readings which follow a simple sequence, thus allowing
+	  test code to check that things are working as expected.
